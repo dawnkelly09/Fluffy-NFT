@@ -32,7 +32,7 @@ contract FluffyNFT is Context, ERC165, IERC721, ERC721Enumerable, Ownable, IERC7
 
     //constructor
     constructor(string memory _baseURI,
-                address _proxyRegistryAddress,
+                address _proxyRegistryAddress
 
     ) 
         ERC721("Fluffy Friends", "FLUFF")
@@ -42,21 +42,6 @@ contract FluffyNFT is Context, ERC165, IERC721, ERC721Enumerable, Ownable, IERC7
 Rinkeby: 0xf57b2c51ded3a29e6891aba85459d600256cf317
 Mainnet: 0xa5409ec958c83c3f309868babaca7c86dcb077c1*/
         _proxyRegistryAddress = proxyRegistryAddress;
-
-
-
-    //events
-
-    //required for ERC721 specs
-
-    //emits with any change in NFT ownership
-    event Transfer(address indexed _from, address indexed _to, uint256 indexed _tokenId);
-    //emits when approved address for an NFT is modified
-    event Approval(address indexed _owner, address indexed _approved, uint256 indexed _tokenId);
-    //emits when operator is enabled/disabled for an owner to manage all NFTs for the owner
-    event ApprovalForAll(address indexed _owner, address indexed _operator, bool _approved);
-    
-
 
 
     //modifiers

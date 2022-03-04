@@ -27,7 +27,7 @@ contract FluffyNFT is Context, ERC165, IERC721, ERC721Enumerable, Ownable, IERC7
     address public immutable    proxyRegistryAddress; 
     uint256 public              MAX_SUPPLY;
     uint256 public constant     MAX_PER_TX          = 3;
-    uint256 public constant     RESERVES            = 111;
+    uint256 public constant     RESERVES            = 100;
     uint256 public constant     priceInWei          = 0.05 ether;
 
     //constructor
@@ -84,7 +84,7 @@ Mainnet: 0xa5409ec958c83c3f309868babaca7c86dcb077c1*/
 
     function publicMint(uint256 count) public payable {
         uint256 totalSupply = _owners.length;
-        require(totalSupply + count < MAX_SUPPLY, "Excedes max supply.");
+        require(totalSupply + count < MAX_SUPPLY, "Exceeds max supply.");
         require(count < MAX_PER_TX, "Exceeds max per transaction.");
         require(count * priceInWei == msg.value, "Invalid funds provided.");
     
